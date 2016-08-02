@@ -23,7 +23,7 @@ install_requires = ['']
 
 setup(
     name = "django-current-request",
-    version = "0.1",
+    version = "0.2",
     description = "For that time when you need the request",
     url = "http://github.com/futurice/django-current-request",
     author = "Jussi Vaihia",
