@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.middleware.csrf import get_token
+import django.utils.deprecation
 
 import threading
 _thread_locals = threading.local()
@@ -10,7 +11,7 @@ def get_current_request():
 def reset_current_request():
     setattr(_thread_locals, 'request', None)
 
-class RequestMiddleware(object):
+class RequestMiddleware(object, django.utils.deprecation.MiddlewareMixin):
 
     def process_request(self, request):
         get_token(request) # force CSRFTOKEN setup
